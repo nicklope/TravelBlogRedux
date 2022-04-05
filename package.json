@@ -1,0 +1,24 @@
+{
+  "name": "travelblogredux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicklope/TravelBlogRedux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicklope/TravelBlogRedux/issues"
+  },
+  "homepage": "https://github.com/nicklope/TravelBlogRedux#readme",
+  "dependencies": {
+    "mongoose": "^6.2.10"
+  }
+}
