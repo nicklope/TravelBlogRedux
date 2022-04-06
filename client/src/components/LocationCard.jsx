@@ -22,7 +22,7 @@ const LocationCard = (props) => {
 
 return (
   <div>
-    {props.locationsState.locations.location.map((location)=>(
+    {props.locationsState.locations.map((location)=>(
       <div>
       <img src={location.locationImage}/>
       <h1>{location.locationName}</h1>

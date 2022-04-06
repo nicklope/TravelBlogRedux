@@ -12,7 +12,7 @@ export const LoadLocations = () => {
       const locations = await GetLocations()
       dispatch({
         type: GET_LOCATIONS,
-        payload: locations
+        payload: locations.location
       })
     } catch (error) {}
   }
