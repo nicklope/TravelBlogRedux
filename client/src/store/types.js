@@ -1,1 +1,4 @@
-
+export const GET_LOCATIONS = 'GET_LOCATIONS'
+export const GET_LOCATION = 'GET_LOCATION'
+export const GET_COMMENTS = 'GET_COMMENTS'
+export const NEW_COMMENT = 'NEW_COMMENT'
