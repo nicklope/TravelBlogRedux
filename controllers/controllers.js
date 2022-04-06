@@ -42,8 +42,15 @@ const deleteComment = async (req, res) => {
 
 const createComment = async (req, res) => {
   try {
+    const { id } = req.params
+    const location = await Location.findOne({ _id: id })
+    console.log(location)
     const comment = await new Comment(req.body)
+    console.log(comment)
+    location.locationComment.push(comment._id)
     await comment.save()
+    await location.save()
+    return res.json(location)
   } catch (error) {
     return res.status(500).send(error.message)
   }

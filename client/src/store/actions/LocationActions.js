@@ -4,7 +4,12 @@ import {
   GetComments
 } from '../../services/LocationService'
 
-import { GET_LOCATIONS, GET_LOCATION, GET_COMMENTS } from '../types'
+import {
+  GET_LOCATIONS,
+  GET_LOCATION,
+  GET_COMMENT_VALUE,
+  GET_COMMENTER_VALUE
+} from '../types'
 
 export const LoadLocations = () => {
   return async (dispatch) => {
@@ -29,3 +34,13 @@ export const LoadLocation = (id) => {
     } catch (error) {}
   }
 }
+
+export const LoadCommenterValue = (commenterValue) => ({
+  type: GET_COMMENTER_VALUE,
+  payload: commenterValue
+})
+
+export const LoadCommentValue = (commentValue) => ({
+  type: GET_COMMENT_VALUE,
+  payload: commentValue
+})

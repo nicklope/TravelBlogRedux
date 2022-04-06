@@ -15,7 +15,13 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const LocationPage = (props) => {
+  let navigate = useNavigate()
+
   let { id } = useParams()
+
+  const navNewComment = (id) => {
+    navigate(`/newcomment/${id}`)
+  }
 
   useEffect(() => {
     props.fetchLocation(id)
@@ -31,6 +37,9 @@ const LocationPage = (props) => {
       <div>
         <h1>{location.locationName}</h1>
         <h2>{location.locationOverview}</h2>
+        <button onClick={() => navNewComment(location._id)}>
+          Add New Comment
+        </button>
       </div>
     </div>
   )
