@@ -17,3 +17,16 @@ export const LoadLocations = () => {
     } catch (error) {}
   }
 }
+
+export const LoadLocation = (id) => {
+  return async (dispatch) => {
+    try {
+      const location = await GetLocation(id)
+      dispatch({
+        type: GET_LOCATION,
+        payload: location.location
+      })
+    } catch (error) {
+    }
+  }
+}
