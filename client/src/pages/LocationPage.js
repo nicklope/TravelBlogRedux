@@ -19,18 +19,19 @@ const LocationPage = (props) => {
 
   useEffect(() => {
     props.fetchLocation(id)
-    console.log(props)
   }, [id])
 
-  console.log(props.locationState.location)
+  console.log(props.locationState)
 
   let location = props.locationState.location
-  console.log(location.locationName)
 
   return (
     <div>
-      Hello World!
-      <div>{location.locationName}</div>
+      <img src={location.locationImage}></img>
+      <div>
+        <h1>{location.locationName}</h1>
+        <h2>{location.locationOverview}</h2>
+      </div>
     </div>
   )
 }
