@@ -33,15 +33,15 @@ const LocationPage = (props) => {
   let location = props.locationState.location
 
   return (
-    <div>
-      <img src={location.locationImage}></img>
+    <div id="locationpage-container">
+      <img id="location-image" src={location.locationImage}></img>
       <div>
-        <h1>{location.locationName}</h1>
-        <h2>{location.locationOverview}</h2>
+        <h1 id="location-name">{location.locationName}</h1>
+        <h2 id="location-overview">{location.locationOverview}</h2>
         {props.locationState.comments.map((comment) => (
-          <div>
-            <div>{comment.commenter}</div>
-            <div>{comment.comment}</div>
+          <div id="comment-box">
+            <div id="commenter-box">commenter: {comment.commenter}</div>
+            <div id="comment">{comment.comment}</div>
           </div>
         ))}
         <button onClick={() => navNewComment(location._id)}>

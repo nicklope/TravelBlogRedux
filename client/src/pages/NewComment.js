@@ -28,7 +28,7 @@ const NewComment = (props) => {
     navigate(`/location/${id}`)
   }
   return (
-    <div>
+    <div id="newcomment-container">
       <input
         className="form"
         type="text"

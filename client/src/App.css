@@ -1,7 +1,65 @@
-#homepage-image {
-  width: 500px;
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+* {
+  font-family: 'Spinnaker', sans-serif;
+}
+#homepage-title {
+  font-size: 50px;
 }
 #homepage-flex {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#homepage-image {
+  width: 500px;
+}
+#locationcard-container {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+  border: 2px solid black;
+}
+#locationpage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#location-image {
+  width: 800px;
+}
+#location-name {
+  border: 3px solid black;
+}
+#location-overview {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+#comment-box {
+  border: 2px solid grey;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+#commenter-box {
+  border: 1px solid grey;
+}
+#comment {
+  margin: 30px;
+}
+#newcomment-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 200px;
 }
