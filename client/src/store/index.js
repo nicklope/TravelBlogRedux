@@ -4,13 +4,15 @@ import thunk from 'redux-thunk'
 import FormValueReducer from './reducers/FormValueReducer'
 import LocationReducer from './reducers/LocationReducer'
 import LocationsReducer from './reducers/LocationsReducer'
+import CommentReducer from './reducers/CommentReducer'
 
 const store = createStore(
   combineReducers({
     locationsState: LocationsReducer,
     locationState: LocationReducer,
     commenterState: FormValueReducer,
-    commentState: FormValueReducer
+    commentState: FormValueReducer,
+    commentsState: CommentReducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )

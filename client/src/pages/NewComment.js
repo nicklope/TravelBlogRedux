@@ -1,10 +1,11 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import {
   LoadCommenterValue,
-  LoadCommentValue
+  LoadCommentValue,
+  SubmitComment
 } from '../store/actions/LocationActions'
 const NewComment = (props) => {
   const navigate = useNavigate()
@@ -12,20 +13,29 @@ const NewComment = (props) => {
   const handleChange = (event) => {
     props.createComment(event.target.value)
   }
+  const handleCommenterChange = (event) => {
+    props.createCommenter(event.target.value)
+  }
+  const { id } = useParams()
+  const handleSubmit = (event) => {
+    let addedComment = {
+      commenter: props.commentState.commenter,
+      comment: props.commentState.comment,
+      location: id
+    }
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   props.addTodo(props.todoState.newTodo)
-  // }
+    props.submitComment(id, addedComment)
+    navigate(`/location/${id}`)
+  }
   return (
-    <div>
+    <div id="newcomment-container">
       <input
         className="form"
         type="text"
         name="commenter"
         placeholder="Your Name"
-        // value={commenter}
-        // onChange={handleChange}
+        value={props.commentState.commenter}
+        onChange={handleCommenterChange}
       />
       <textarea
         className="form"
@@ -35,7 +45,7 @@ const NewComment = (props) => {
         value={props.commentState.comment}
         onChange={handleChange}
       />
-      <button>Submit</button>
+      <button onClick={() => handleSubmit()}>Submit</button>
     </div>
   )
 }
@@ -48,7 +58,8 @@ const mapStateToProps = (state) => {
 const mapActionsToProps = (dispatch) => {
   return {
     createCommenter: (formValue) => dispatch(LoadCommenterValue(formValue)),
-    createComment: (formValue) => dispatch(LoadCommentValue(formValue))
+    createComment: (formValue) => dispatch(LoadCommentValue(formValue)),
+    submitComment: (id, formValue) => dispatch(SubmitComment(id, formValue))
   }
 }
 export default connect(mapStateToProps, mapActionsToProps)(NewComment)

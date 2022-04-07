@@ -1,4 +1,8 @@
-const { GET_COMMENTER_VALUE, GET_COMMENT_VALUE } = require('../types')
+const {
+  GET_COMMENTER_VALUE,
+  GET_COMMENT_VALUE,
+  NEW_COMMENT
+} = require('../types')
 
 const iState = {
   commenter: '',
@@ -11,6 +15,7 @@ const FormValueReducer = (state = iState, action) => {
       return { ...state, commenter: action.payload }
     case GET_COMMENT_VALUE:
       return { ...state, comment: action.payload }
+
     default:
       return { ...state }
   }

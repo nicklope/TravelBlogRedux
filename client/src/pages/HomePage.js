@@ -1,8 +1,8 @@
 import LocationCard from '../components/LocationCard'
 const HomePage = () => {
   return (
-    <div>
-      <h1>This is the home page</h1>
+    <div id="homepage-flex">
+      <h1 id="homepage-title">Welcome to our Travel Blog</h1>
       <LocationCard />
     </div>
   )
