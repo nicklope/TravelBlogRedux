@@ -32,7 +32,7 @@ return (
   <div>
     {props.locationsState.locations.map((location)=>(
       <div>
-      <img src={location.locationImage} onClick={()=> {
+      <img id='homepage-image' src={location.locationImage} onClick={()=> {
         navLocation(location._id)
       }}/>
       <h1>{location.locationName}</h1>
